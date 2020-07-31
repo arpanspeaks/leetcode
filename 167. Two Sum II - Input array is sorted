@@ -1,0 +1,15 @@
+# https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+
+class Solution:
+    def twoSum(self, arr, target):
+        low = 0
+        high = len(arr)-1
+        while low < high:
+            s = arr[low] + arr[high]
+            if s == target:
+                return [low+1, high+1]
+            elif s < target:
+                low += 1
+            else:
+                high -= 1
+        return []
